@@ -1,10 +1,10 @@
 [
   {
     "cep": "01001-000",
-    "logradouro": "Praça da Sé",
-    "complemento": "lado ímpar",
-    "bairro": "Sé",
-    "localidade": "São Paulo",
+    "logradouro": "PraÃ§a da SÃ©",
+    "complemento": "lado Ã­mpar",
+    "bairro": "SÃ©",
+    "localidade": "SÃ£o Paulo",
     "uf": "SP",
     "unidade": "",
     "ibge": "3550308",
@@ -12,10 +12,10 @@
   },
   {
     "cep": "05614-060",
-    "logradouro": "Rua Ampélio Dionísio Zocchi",
+    "logradouro": "Rua AmpÃ©lio DionÃ­sio Zocchi",
     "complemento": "",
     "bairro": "Morumbi",
-    "localidade": "São Paulo",
+    "localidade": "SÃ£o Paulo",
     "uf": "SP",
     "unidade": "",
     "ibge": "3550308",
