@@ -26,11 +26,11 @@ public class CepClientTest {
     @Test
     public void validarStatus () throws FileNotFoundException {
 
-        CepResponse mockResponse = gson
+        CepResponse[] mockResponse = gson
                 .fromJson(new FileReader(path + "/src/test/resources/ceps.json"),
-                        CepResponse.class);
+                        CepResponse[].class);
 
-        System.out.println("CEP = " + mockResponse.getCep());
+        System.out.println("CEP = " + mockResponse[0]);
 
         Assertions.assertEquals(HttpStatus.OK, HttpStatus.ACCEPTED);
 
