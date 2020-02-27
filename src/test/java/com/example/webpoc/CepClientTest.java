@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import com.example.webpoc.domain.cep.CepResponse;
+import com.example.webpoc.domain.cep.remote.CepService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.HttpStatus;
 
 import com.google.gson.Gson;
 
@@ -19,20 +19,28 @@ import com.google.gson.Gson;
 //@PropertySource("classpath:/resources/ceps.json")
 public class CepClientTest {
 
+    CepService cepService = new CepService();
+
     Gson gson = new Gson();
 
     private String path = System.getProperty("user.dir");
 
     @Test
-    public void validarStatus () throws FileNotFoundException {
+    public void validarFormato () throws FileNotFoundException {
 
         CepResponse[] mockResponse = gson
                 .fromJson(new FileReader(path + "/src/test/resources/ceps.json"),
                         CepResponse[].class);
 
-        System.out.println("CEP = " + mockResponse[0]);
+        String responseFormat =
+                mockResponse[0].getLogradouro() + ", " + mockResponse[0].getLocalidade() + " - " + mockResponse[0]
+                        .getUf();
 
-        Assertions.assertEquals(HttpStatus.OK, HttpStatus.ACCEPTED);
+        String response = cepService
+                .formatResponse(mockResponse[0].getLogradouro(), mockResponse[0].getLocalidade(),
+                        mockResponse[0].getUf());
+
+        Assertions.assertEquals(response, responseFormat);
 
     }
 

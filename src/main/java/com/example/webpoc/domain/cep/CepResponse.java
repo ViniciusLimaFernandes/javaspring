@@ -24,4 +24,7 @@ public class CepResponse {
 
     @JsonProperty("localidade")
     private String localidade;
+
+    @JsonProperty("uf")
+    private String uf;
 }

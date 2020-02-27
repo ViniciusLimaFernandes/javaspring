@@ -10,4 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CepService {
 
+    public String formatResponse (String logradouro, String localidade, String uf) {
+        return logradouro + ", " + localidade + " - " + uf;
+    }
+
 }
